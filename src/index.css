@@ -1,0 +1,19 @@
+body {
+  height: 100vh;
+  background: #000;
+  background-image: linear-gradient(
+    to left top,
+    #ba4141,
+    #b73a39,
+    #b33230,
+    #b02a28,
+    #ac211f,
+    #a51c1a,
+    #9f1616,
+    #981011,
+    #8e0e0f,
+    #830c0d,
+    #790a0b,
+    #6f0808
+  );
+}
