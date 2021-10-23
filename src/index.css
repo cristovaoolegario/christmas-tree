@@ -161,6 +161,17 @@ body {
   background: #c91212;
 }
 
+.shadow {
+  background-color: rgba(0, 0, 0, 0.07);
+  position: absolute;
+  width: 250px;
+  height: 30px;
+  border-radius: 50%;
+  top: 390px;
+  left: 20px;
+  z-index: -1;
+}
+
 /* title*/
 
 h1 {
