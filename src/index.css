@@ -106,6 +106,57 @@ body {
   left: 105px;
 }
 
+.ornament {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0 0 3px #033b26;
+  z-index: 4;
+}
+
+.shine {
+  position: absolute;
+  width: 55%;
+  height: 55%;
+  top: 10%;
+  right: 11%;
+  border-radius: 50%;
+  background: white;
+  filter: opacity(60%);
+}
+
+.or1 {
+  left: 28%;
+  top: 34%;
+  background: #0742d9;
+}
+.or2 {
+  left: 60%;
+  top: 40%;
+  background: #c91212;
+}
+.or3 {
+  left: 20%;
+  top: 49%;
+  background: #dbb700;
+}
+.or4 {
+  left: 48%;
+  top: 55%;
+  background: #0742d9;
+}
+.or5 {
+  left: 70%;
+  top: 65%;
+  background: #dbb700;
+}
+.or6 {
+  left: 25%;
+  top: 63%;
+  background: #c91212;
+}
+
 h1 {
   font-family: "Berkshire Swash";
   font-weight: normal;
