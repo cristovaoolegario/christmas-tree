@@ -6,3 +6,4 @@ A christmas tree animation with HTML and CSS.
 
 - [Icons](https://favicon.io/emoji-favicons/christmas-tree/)
 - [Font](https://fonts.google.com/specimen/Berkshire+Swash)
+- [Gradient background](https://mycolor.space/gradient3)

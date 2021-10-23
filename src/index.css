@@ -17,3 +17,15 @@ body {
     #6f0808
   );
 }
+.cone {
+  width: 150px;
+  height: 100px;
+  border-radius: 45%;
+  background: radial-gradient(farthest-side at top, green, #034f33);
+  -webkit-mask: conic-gradient(
+    from 150deg at top,
+    #0000,
+    #000 1deg 60deg,
+    #0000 61deg
+  );
+}
