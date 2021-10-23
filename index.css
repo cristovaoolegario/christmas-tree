@@ -160,6 +160,103 @@ body {
   top: 63%;
   background: #c91212;
 }
+
+.bells-container {
+  position: relative;
+  left: 80px;
+  top: 65px;
+}
+
+.bell1,
+.bell2 {
+  width: 30px;
+  height: 0;
+  border-bottom: 35px solid #d4a429;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  z-index: 11;
+}
+
+.bell1 {
+  position: relative;
+  top: 50px;
+  left: 50px;
+  transform: rotate(25deg);
+}
+.bell2 {
+  position: relative;
+  top: 15px;
+  left: 90px;
+  transform: rotate(-25deg);
+}
+
+.bell-top {
+  width: 30px;
+  height: 15px;
+  background-color: #d4a429;
+  position: relative;
+  bottom: 13px;
+  border-radius: 15px 15px 0 0;
+}
+.bell-bottom {
+  width: 41px;
+  height: 0;
+  border-bottom: 10px solid #d4a445;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  position: relative;
+  top: 19px;
+  right: 11px;
+  border-radius: 0 0 7.5px 7.5px;
+}
+
+.bell-mid {
+  background-color: #d4a429;
+  height: 7.5px;
+  width: 15px;
+  position: relative;
+  top: 18.5px;
+  border-radius: 0 0 7.5px 7.5px;
+}
+
+.bow {
+  position: relative;
+  left: 68px;
+  bottom: 45px;
+  transform: rotate(-5deg);
+  z-index: 12;
+}
+.b1 {
+  height: 12.5px;
+  width: 0;
+  border-right: 20px solid #e95840;
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  position: relative;
+  bottom: 8.5px;
+  left: 30px;
+}
+.b2 {
+  height: 12.5px;
+  width: 0;
+  border-left: 20px solid #e95840;
+  border-top: 7.5px solid transparent;
+  border-bottom: 7.5px solid transparent;
+  position: relative;
+  bottom: 36px;
+  left: 0px;
+}
+
+.b3 {
+  background-color: #e4391b;
+  height: 20px;
+  width: 17.5px;
+  border-radius: 7.5px;
+  position: relative;
+  bottom: 60px;
+  left: 16px;
+}
+
 .shadow {
   background-color: rgba(0, 0, 0, 0.07);
   position: absolute;
@@ -276,7 +373,7 @@ body {
   top: -8px;
 }
 
-/* title*/
+/* title */
 
 h1 {
   font-family: "Berkshire Swash";
