@@ -586,3 +586,7 @@ h1 {
   left: 80%;
   animation-delay: 3s, 1.5s;
 }
+
+.flipdown {
+  margin: 0 auto;
+}
