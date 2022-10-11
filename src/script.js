@@ -7,15 +7,18 @@ const nextXmasDate = (currentTime) => {
   return xmasDate;
 };
 
-const updateCounter = () => {
-  let currentTime = new Date();
-  let difference = nextXmasDate(currentTime) - currentTime;
-  let days = Math.floor(difference / 1000 / 60 / 60 / 24);
-  let hours = Math.floor(difference / 1000 / 60 / 60) % 24;
-  let minutes = Math.floor(difference / 1000 / 60) % 60;
-  let seconds = Math.floor(difference / 1000) % 60;
+document.addEventListener("DOMContentLoaded", () => {
+  // Unix timestamp (in seconds) to count down to
+  let nextXmas = nextXmasDate(new Date()).getTime() / 1000;
 
-  console.log({ days: days, hours: hours, minutes: minutes, seconds: seconds });
-};
+  // Set up FlipDown
+  let flipdown = new FlipDown(nextXmas)
 
-setInterval(updateCounter, 1000);
+    // Start the countdown
+    .start()
+
+    // Do something when the countdown ends
+    .ifEnded(() => {
+      console.log("The countdown has ended!");
+    });
+});

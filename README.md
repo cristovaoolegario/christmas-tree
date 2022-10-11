@@ -9,3 +9,4 @@ A christmas tree animation with HTML and CSS.
 - [Light ropes](https://codepen.io/tobyj/pen/QjvEex)
 - [Gradient background](https://mycolor.space/gradient3)
 - [Gifts](https://codepen.io/lenasta92579651/pen/xxERxBx)
+- [Countdown timer](https://github.com/PButcher/flipdown#flipdown)
