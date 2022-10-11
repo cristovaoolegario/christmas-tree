@@ -9,10 +9,10 @@ const nextXmasDate = (currentTime) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   // Unix timestamp (in seconds) to count down to
-  var nextXmas = nextXmasDate(new Date()).getTime() / 1000;
+  let nextXmas = nextXmasDate(new Date()).getTime() / 1000;
 
   // Set up FlipDown
-  var flipdown = new FlipDown(nextXmas)
+  let flipdown = new FlipDown(nextXmas)
 
     // Start the countdown
     .start()
