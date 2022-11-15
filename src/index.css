@@ -590,3 +590,125 @@ h1 {
 .flipdown {
   margin: 0 auto;
 }
+
+.container {
+  height: 480px;
+  width: 350px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.plane {
+  position: relative;
+  -webkit-animation: float 3s infinite;
+  animation: float 3s infinite;
+}
+@-webkit-keyframes float {
+  50% {
+    -webkit-transform: translateY(25px);
+    transform: translateY(25px);
+  }
+}
+@keyframes float {
+  50% {
+    -webkit-transform: translateY(25px);
+    transform: translateY(25px);
+  }
+}
+.hand {
+  -webkit-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  transform: rotate(10deg);
+  -webkit-animation: wave 1.5s infinite;
+  animation: wave 1.5s infinite;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+}
+.blade {
+  -webkit-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
+  -webkit-transform-origin: 50% 54%;
+  -ms-transform-origin: 50% 54%;
+  transform-origin: 50% 54%;
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotateX(360deg);
+    transform: rotateX(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotateX(360deg);
+    transform: rotateX(360deg);
+  }
+}
+@-webkit-keyframes wave {
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+}
+@keyframes wave {
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+}
+@media screen and (min-width: 451px) {
+  a {
+    font-size: 20px;
+    padding: 8px 12px 8px 12px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  a {
+    font-size: 14px;
+    padding: 5px 8px 5px 8px;
+  }
+}
+
+.santa-container {
+  width: 350px;
+  height: 400px;
+  bottom: 10px;
+  position: absolute;
+}
+.santa-container {
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-name: plane-movement;
+}
+
+@keyframes plane-movement {
+  0% {
+    opacity: 1;
+    left: 100vw;
+    bottom: 50vh;
+  }
+  50% {
+    opacity: 1;
+    left: 50vw;
+    bottom: 40vh;
+  }
+  75% {
+    opacity: 1;
+    left: 0vw;
+    bottom: 40vh;
+  }
+  100% {
+    opacity: 1;
+    left: -100vw;
+    bottom: 50vh;
+  }
+}
