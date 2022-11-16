@@ -11,3 +11,4 @@ A christmas tree animation with HTML and CSS.
 - [Gifts](https://codepen.io/lenasta92579651/pen/xxERxBx)
 - [Countdown timer](https://github.com/PButcher/flipdown#flipdown)
 - [Flying santa](https://codepen.io/Coding-Artist/pen/ExaXZqZ)
+- [Santa's Reindeer](https://codepen.io/ivanodintsov/pen/BjVMRL)

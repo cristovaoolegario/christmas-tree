@@ -2,7 +2,6 @@ body {
   font-size: 150%;
   height: 100vh;
   background: #000;
-  overflow: hidden;
   background-image: linear-gradient(
     to left top,
     #ba4141,
@@ -591,15 +590,35 @@ h1 {
   margin: 0 auto;
 }
 
-.container {
+/* Flying santa*/
+.santa-container {
   height: 480px;
   width: 350px;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   position: absolute;
-  top: 50%;
-  left: 50%;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-name: plane-movement;
+}
+
+@keyframes plane-movement {
+  0% {
+    opacity: 1;
+    left: 100vw;
+    top: 20%;
+  }
+  50% {
+    opacity: 1;
+    left: 50vw;
+    top: 40%;
+  }
+  100% {
+    opacity: 1;
+    left: -100vw;
+    top: 20%;
+  }
 }
 svg {
   position: absolute;
@@ -677,38 +696,702 @@ svg {
     padding: 5px 8px 5px 8px;
   }
 }
+/* Reindeer */
+.deer-container {
+  background-color: transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px transparent;
+  height: 300px;
+  width: 200px;
+  margin: 40px auto 50px auto;
+  position: relative;
+  bottom: 430px;
+  right: 190px;
+}
 
-.santa-container {
-  width: 350px;
-  height: 400px;
-  bottom: 10px;
+.artboard {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.deer {
+  width: 50px;
+  margin: 0 auto;
+  position: relative;
+}
+.rocking {
+  animation: rocking 0.4s ease-in-out infinite alternate-reverse;
+  transform-origin: bottom left;
+  position: relative;
+  z-index: 1;
+}
+@keyframes rocking {
+  100% {
+    transform: rotate(-1deg);
+  }
+}
+.head {
+  position: relative;
+  width: 50px;
+}
+.horns {
+  animation: rocking 0.4s cubic-bezier(0.4, 0, 0.2, 1) infinite
+    alternate-reverse;
+  height: 55px;
+  position: relative;
+  top: 31px;
+  width: 50px;
+}
+.horn {
+  background-color: #91655d;
+  border-radius: 7px 7px 0 0;
+  height: 55px;
+  position: relative;
+  width: 7px;
+  z-index: 1;
+}
+.horn .line {
+  background-color: #91655d;
+  border-radius: 7px 7px 7px 7px;
+  height: 7px;
+  width: 20px;
+  margin-bottom: 15px;
+  position: relative;
+  top: 10px;
+}
+.horn-left {
+  top: -7px;
+  transform: rotate(-25deg);
+}
+.horn-left .line-one {
+  right: 12px;
+  transform: rotate(30deg);
+}
+.horn-left .line-two {
+  top: -2px;
+  left: 2px;
+  transform: rotate(-30deg);
+}
+.horn-left .line-three {
+  top: -15px;
+  right: 12px;
+  transform: rotate(30deg);
+}
+
+.horn-right {
+  bottom: 60px;
+  left: 40px;
+  transform: rotate(25deg);
+}
+.horn-right .line-one {
+  top: 7px;
+  right: 1px;
+  transform: rotate(-30deg);
+}
+.horn-right .line-two {
+  top: -2px;
+  right: 12px;
+  transform: rotate(30deg);
+}
+.horn-right .line-three {
+  top: -15px;
+  left: 0px;
+  transform: rotate(-30deg);
+}
+.ears {
   position: absolute;
+  top: 70px;
 }
-.santa-container {
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-name: plane-movement;
+.ear {
+  background-color: #91655d;
+  border-radius: 100% 50% 50% 50%;
+  height: 18px;
+  position: relative;
+  right: 20px;
+  top: 10px;
+  transform: rotate(30deg);
+  transform-origin: 100%;
+  width: 30px;
+}
+.ear:before {
+  background-color: #e7beb2;
+  border-radius: 100% 50% 50% 50%;
+  height: 9px;
+  content: "";
+  display: block;
+  left: 5px;
+  position: relative;
+  top: 5px;
+  width: 15px;
+}
+.ear-left {
+  animation: ear-left 2s cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite
+    alternate-reverse;
+  transform: rotate(30deg);
+  position: relative;
+  right: 20px;
+  top: 10px;
 }
 
-@keyframes plane-movement {
-  0% {
-    opacity: 1;
-    left: 100vw;
-    bottom: 50vh;
-  }
-  50% {
-    opacity: 1;
-    left: 50vw;
-    bottom: 40vh;
-  }
-  75% {
-    opacity: 1;
-    left: 0vw;
-    bottom: 40vh;
+@keyframes ear-left {
+  85% {
+    transform: rotate(30deg);
   }
   100% {
-    opacity: 1;
-    left: -100vw;
-    bottom: 50vh;
+    transform: rotate(-10deg);
   }
+}
+
+.ear-right {
+  animation: ear-right 2s cubic-bezier(0.6, -0.28, 0.74, 0.05) 2s infinite
+    alternate-reverse;
+  left: 10px;
+  right: 0;
+  top: -8px;
+  transform: rotate(160deg);
+}
+
+@keyframes ear-right {
+  85% {
+    transform: rotate(160deg);
+  }
+  100% {
+    transform: rotate(170deg);
+  }
+}
+
+.eyes {
+  position: absolute;
+  top: 90px;
+  right: -5px;
+  width: 32px;
+  z-index: 2;
+}
+
+.eyes .eye {
+  background: linear-gradient(0deg, white 50%, #aa8275 50%);
+  border-radius: 15px;
+  height: 15px;
+  width: 15px;
+}
+
+.eyes .eye-left {
+  float: left;
+}
+
+.eyes .eye:after {
+  animation: eyes 5s infinite alternate-reverse;
+  background-color: #495169;
+  border-radius: 5px;
+  height: 5px;
+  content: "";
+  display: block;
+  left: 5px;
+  position: relative;
+  top: -3px;
+  width: 5px;
+}
+
+@keyframes eyes {
+  0% {
+    transform: translate(3px, 2px);
+  }
+  75% {
+    transform: translate(3px, 2px);
+  }
+}
+
+.eyes .eye:before {
+  animation: eaves 5s infinite alternate-reverse;
+  background-color: #aa8275;
+  border-radius: 9px 9px 0 0;
+  height: 9px;
+  content: "";
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+@keyframes eaves {
+  0% {
+    top: -1px;
+  }
+}
+
+.eyes .eye-right {
+  float: right;
+}
+.nose {
+  background-color: #91655d;
+  border-radius: 0 7px 15px;
+  top: 47px;
+  height: 18px;
+  left: 40px;
+  position: relative;
+  width: 20px;
+  z-index: 2;
+}
+.nose:before {
+  background-color: #fb5d5d;
+  border-radius: 15px;
+  content: "";
+  display: block;
+  height: 14px;
+  position: absolute;
+  right: -0.5px;
+  top: -0.5px;
+  width: 16px;
+}
+.nose:after {
+  background-color: white;
+  border-radius: 5px;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  right: 4px;
+  top: 2px;
+  width: 5px;
+}
+
+.body {
+  background-color: #91655d;
+  border-radius: 50px 50px 0;
+  box-shadow: inset 7px 0 0 0 #9c7169;
+  height: 140px;
+  position: relative;
+  width: 50px;
+  z-index: 1;
+}
+
+.body:before {
+  background-color: #e7beb2;
+  border-radius: 20px 0 0 20px;
+  bottom: 20px;
+  box-shadow: inset -7px 0 0 0 #c39e9a;
+  content: "";
+  display: block;
+  height: 65px;
+  position: absolute;
+  right: 0;
+  width: 20px;
+}
+.hooves {
+  position: relative;
+  bottom: 40px;
+  right: 34px;
+}
+.hoof-one {
+  animation: jump 0.3s ease-in-out infinite alternate-reverse;
+  left: 10px;
+  position: relative;
+  top: 70px;
+  transform: rotate(25deg);
+  transform-origin: 100% 50%;
+}
+
+@keyframes jump {
+  100% {
+    transform: translateY(-2px) rotate(25deg);
+  }
+}
+
+.hoof-one .line {
+  height: 30px;
+  border: 20px solid;
+  border-radius: 40px;
+  border-color: transparent transparent #91655d transparent;
+  left: 25px;
+  width: 30px;
+  position: relative;
+  top: 5px;
+  transform: rotate(-30deg);
+}
+.hoof-one .anim-part {
+  position: relative;
+  bottom: 23px;
+  left: 81px;
+  transform: rotate(-75deg);
+  transform-origin: left;
+}
+.hoof-one .circle {
+  animation: hoof-one 0.3s ease-in-out infinite alternate-reverse;
+  background-color: #91655d;
+  height: 20px;
+  width: 20px;
+  border-radius: 30px;
+  transform: translateX(3px) rotate(0deg);
+}
+
+@keyframes hoof-one {
+  100% {
+    transform: translateX(2px) rotate(5deg);
+  }
+}
+
+.hoof-one .circle-last {
+  border-radius: 20px 0 0 20px;
+  transform: translateX(2px) rotate(0deg);
+}
+.hoof-one .circle-last:before {
+  content: "";
+  display: block;
+  border-top: 20px solid #674a4a;
+  border-left: 7px solid transparent;
+  height: 0;
+  left: 10px;
+  width: 7px;
+  position: relative;
+  z-index: 1;
+}
+.hoof-one .circle-last:after {
+  background-color: #ffb63c;
+  border-radius: 10px;
+  bottom: 30px;
+  content: "";
+  display: block;
+  height: 40px;
+  left: 19px;
+  position: relative;
+  width: 9px;
+}
+.hoof-two {
+  animation: jump-two 0.3s ease-in-out infinite alternate-reverse;
+  left: 55px;
+  position: relative;
+  top: 10px;
+  z-index: -1;
+}
+
+@keyframes jump-two {
+  100% {
+    transform: translateY(2px);
+  }
+}
+
+.hoof-two .line-one {
+  transform: rotate(-45deg);
+  height: 10px;
+  border: 20px solid;
+  border-radius: 40px;
+  border-color: transparent transparent #91655d transparent;
+  width: 10px;
+  position: absolute;
+}
+
+.hoof-two .line-two {
+  left: 30px;
+  transform: rotate(135deg);
+  height: 10px;
+  border: 20px solid;
+  border-radius: 40px;
+  border-color: transparent transparent #91655d transparent;
+  width: 10px;
+  position: absolute;
+}
+
+.tail {
+  background-color: #9c7169;
+  bottom: 0;
+  left: 4px;
+  position: absolute;
+  width: 20px;
+  z-index: 0;
+}
+
+@keyframes tail {
+  10% {
+    transform: rotate(2deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+}
+
+.tail .circle {
+  -webkit-animation: tail 2s cubic-bezier(0, 0.02, 0.9, 2) infinite;
+  animation: tail 2s cubic-bezier(0, 0.02, 0.9, 2) infinite;
+  background-color: #9c7169;
+  border-radius: 11px;
+  height: 12px;
+  position: relative;
+  right: 2px;
+  transform: rotate(-5deg);
+  width: 12px;
+}
+
+.legs {
+  position: relative;
+}
+
+.legs:before {
+  background: linear-gradient(to left, #91655d 50%, #9c7169 50%);
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 10px;
+  left: 7px;
+  position: absolute;
+  width: 30px;
+  z-index: 0;
+}
+.leg-left .anim-part:before,
+.leg-left .anim-part:after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+
+.leg-left:before,
+.leg-left:after,
+.leg-right:before,
+.leg-right:after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+
+.leg-left:after {
+  background-color: #674a4a;
+  height: 13px;
+  left: 48px;
+  top: 32px;
+  transform: skew(-8deg);
+  width: 20px;
+  z-index: 2;
+}
+.leg-left .anim-part {
+  animation: leg-left 0.4s ease-out infinite alternate-reverse;
+  position: relative;
+  top: 1px;
+  transform: rotate(5deg) translateX(3px);
+  transform-origin: right;
+  z-index: 2;
+}
+@keyframes leg-left {
+  0% {
+    transform: rotate(0deg) translateX(0px);
+  }
+  50% {
+    transform: rotate(5deg) translateX(3px);
+  }
+}
+.leg-left .anim-part:before {
+  height: 16px;
+  width: 16px;
+  border: 20px solid;
+  border-radius: 30px;
+  border-color: transparent #835f5b transparent transparent;
+  transform: rotate(-45deg);
+  top: -17px;
+  left: 17px;
+}
+.leg-left .anim-part .line {
+  background-color: #835f5b;
+  height: 25px;
+  position: absolute;
+  width: 20px;
+  left: 51px;
+  top: 7px;
+  z-index: 2;
+  transform: skew(-9deg);
+}
+.leg-left .anim-part:after {
+  background-color: #835f5b;
+  height: 20px;
+  left: 33px;
+  top: -20px;
+  width: 24px;
+}
+.leg-left:after {
+  background-color: #674a4a;
+  height: 13px;
+  left: 48px;
+  top: 32px;
+  transform: skew(-8deg);
+  width: 20px;
+  z-index: 2;
+}
+
+.leg-right {
+  position: relative;
+  right: 10px;
+}
+.leg-right:before {
+  height: 30px;
+  width: 38px;
+  border: 20px solid;
+  border-radius: 40px;
+  border-color: #91655d transparent transparent transparent;
+  transform: rotate(-15deg);
+  z-index: 3;
+  top: -29px;
+  left: 21px;
+}
+.leg-right .anim-part {
+  position: absolute;
+  left: 64px;
+  bottom: 9px;
+  transform: rotate(43deg);
+  z-index: 2;
+}
+.leg-right .anim-part .circle {
+  animation: leg-right 0.4s ease-out infinite alternate-reverse;
+  width: 20px;
+  height: 20px;
+  background-color: #91655d;
+  border-radius: 20px;
+  transform: translateX(4px) rotate(4deg);
+}
+
+@keyframes leg-right {
+  100% {
+    transform: translateX(4px) rotate(2deg);
+  }
+}
+.leg-right .anim-part .circle-last {
+  border-radius: 20px 0 0 20px;
+}
+.leg-right .anim-part .circle-last:before {
+  content: "";
+  display: block;
+  border-bottom: 20px solid #674a4a;
+  border-right: 2px solid transparent;
+  height: 0;
+  left: 15px;
+  width: 11px;
+  position: relative;
+  z-index: 1;
+}
+.presents {
+  top: 3px;
+  height: 45px;
+  margin: 0 auto;
+  position: relative;
+  width: 110px;
+}
+.presents:after {
+  animation: shadow 0.4s ease-out infinite alternate-reverse;
+  background-color: rgba(0, 0, 0, 0.07);
+  bottom: 0;
+  border-radius: 7px;
+  content: "";
+  display: block;
+  height: 7px;
+  left: -22px;
+  position: absolute;
+  width: 170px;
+}
+.present {
+  border-radius: 4px;
+  bottom: 3px;
+  position: absolute;
+  z-index: 1;
+}
+.present:before,
+.present:after {
+  content: "";
+  display: block;
+  position: relative;
+}
+.present-one {
+  background-color: #fb5d5d;
+  height: 45px;
+  right: 32px;
+  width: 45px;
+  z-index: 3;
+}
+
+.present-one:before {
+  background-color: #fc7676;
+  height: 12px;
+  width: 47px;
+  border-radius: 4px 4px 2px 2px;
+  box-shadow: 0 2px 0 0 rgb(0 0 0 / 4%);
+  right: 1px;
+}
+
+.present-two {
+  background-color: #82dfe3;
+  height: 30px;
+  width: 30px;
+}
+.present-two:before {
+  background-color: #97e4e8;
+  height: 10px;
+  width: 32px;
+}
+.present:before {
+  border-radius: 4px 4px 2px 2px;
+  box-shadow: 0 2px 0 0 rgb(0 0 0 / 4%);
+  right: 1px;
+}
+.present-two:after {
+  background-color: #69b2cb;
+  bottom: 10px;
+  height: 100%;
+  left: 7px;
+  width: 5px;
+}
+.present-two-right {
+  right: 5px;
+}
+.present-two {
+  background-color: #82dfe3;
+  height: 30px;
+  width: 30px;
+}
+
+.present-three {
+  background-color: #ffb63c;
+  height: 25px;
+  left: 25px;
+  margin: auto;
+  width: 25px;
+  z-index: 3;
+}
+.present-three:before {
+  background-color: #ffc056;
+  height: 8px;
+  width: 27px;
+}
+.present:before {
+  border-radius: 4px 4px 2px 2px;
+  box-shadow: 0 2px 0 0 rgb(0 0 0 / 4%);
+  right: 1px;
+}
+.present:before,
+.present:after {
+  content: "";
+  display: block;
+  position: relative;
+}
+.present-three:after {
+  background-color: #fb5353;
+  bottom: 8px;
+  height: 100%;
+  left: 13px;
+  width: 5px;
+}
+.present:before,
+.present:after {
+  content: "";
+  display: block;
+  position: relative;
+}
+
+.present-three:after {
+  background-color: #fb5353;
+  bottom: 8px;
+  height: 100%;
+  left: 13px;
+  width: 5px;
+}
+.present:before,
+.present:after {
+  content: "";
+  display: block;
+  position: relative;
 }
